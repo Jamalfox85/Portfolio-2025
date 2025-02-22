@@ -1,6 +1,5 @@
 <template>
-  <h1 class="text-red-500">Test</h1>
-  <p class="text-blue-500">Hello Vite + Vue 3 + TypeScript + Tailwind CSS</p>
+  <h1>Test</h1>
 </template>
 
 <script lang="ts">
@@ -22,10 +21,7 @@ export default {
   created() {
     // Lifecycle hook - called when the component is created
   },
-  mounted() {
-    window.$message.success("naive ui added.");
-    window.$message.error("error test");
-  },
+  mounted() {},
 };
 </script>
 
