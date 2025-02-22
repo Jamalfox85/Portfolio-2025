@@ -1,27 +1,44 @@
 <template>
-  <h1>Test</h1>
+  <div class="h-screen flex flex-col">
+    <Header class="mb-auto" />
+    <main>
+      <div class="theme-selector">
+        <button @click="setTheme('darkModern')">Dark Modern</button>
+        <button @click="setTheme('tomorrowNightBlue')">
+          Tomorrow Night Blue
+        </button>
+        <button @click="setTheme('red')">Red</button>
+        <button @click="setTheme('huacatPink')">Huacat Pink</button>
+      </div>
+    </main>
+    <Footer class="mt-auto" />
+  </div>
 </template>
 
 <script lang="ts">
+import { useThemeStore } from "./stores/themeStore";
+
+import Header from "./components/layout/Header.vue";
+import Footer from "./components/layout/Footer.vue";
+
 export default {
+  components: {
+    Header,
+    Footer,
+  },
   data() {
     return {
-      // Your component data goes here
+      themeStore: useThemeStore(),
     };
   },
-  props: {
-    // Your component props go here
-  },
-  computed: {
-    // Your computed properties go here
-  },
   methods: {
-    // Your component methods go here
+    setTheme(theme) {
+      this.themeStore.setTheme(theme);
+    },
   },
-  created() {
-    // Lifecycle hook - called when the component is created
+  mounted() {
+    this.themeStore.loadInitialTheme();
   },
-  mounted() {},
 };
 </script>
 
