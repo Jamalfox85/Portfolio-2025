@@ -1,5 +1,6 @@
 <template>
-  <h1>Test</h1>
+  <h1 class="text-red-500">Test</h1>
+  <p class="text-blue-500">Hello Vite + Vue 3 + TypeScript + Tailwind CSS</p>
 </template>
 
 <script lang="ts">
