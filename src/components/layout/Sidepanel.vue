@@ -14,9 +14,6 @@
               <p class="cursor-pointer hover:text-blue-500 transition">
                 Skills.tsx
               </p>
-              <p class="cursor-pointer hover:text-blue-500 transition">
-                Contact.html
-              </p>
             </div>
           </n-collapse-item>
           <n-collapse-item title="Projects" name="2">

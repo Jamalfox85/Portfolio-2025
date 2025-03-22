@@ -47,6 +47,7 @@
 <script lang="ts">
 import { NSplit, NTabs, NTabPane } from "naive-ui";
 import Readme from "./Readme.vue";
+import Experience from "./Experience.vue";
 export default {
   components: {
     NSplit,
@@ -55,24 +56,20 @@ export default {
   },
   data() {
     return {
-      aboutName: "READ.me",
+      aboutName: "README.md",
       aboutPanels: [
         {
-          name: "READ.me",
+          name: "README.md",
           component: Readme,
         },
 
         {
           name: "Experience.vue",
-          component: Readme,
+          component: Experience,
         },
         {
           name: "Skills.tsx",
-          component: Readme,
-        },
-        {
-          name: "Contact.html",
-          component: Readme,
+          component: Experience,
         },
       ],
       projectsName: "Project #1.vue",
@@ -86,10 +83,10 @@ export default {
   },
   methods: {
     handleClose(name: string) {
-      const aboutIndex = this.aboutPanels.findIndex((v) => name === v);
+      const aboutIndex = this.aboutPanels.findIndex((v) => name === v.name);
       if (aboutIndex != -1) {
         this.aboutPanels.splice(aboutIndex, 1);
-        this.aboutName = this.aboutPanels[0];
+        this.aboutName = this.aboutPanels[0]?.name || "";
       }
 
       const projectIndex = this.projectPanels.findIndex((v) => name === v);
