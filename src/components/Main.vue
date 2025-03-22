@@ -11,12 +11,12 @@
             @close="handleClose"
           >
             <n-tab-pane
-              v-for="panel in aboutPanels"
-              :key="panel"
-              :tab="panel.toString()"
-              :name="panel"
+              v-for="(panel, index) in aboutPanels"
+              :key="index"
+              :tab="panel.name.toString()"
+              :name="panel.name"
             >
-              {{ panel }}
+              <component :is="panel.component" />
             </n-tab-pane>
           </n-tabs>
         </div>
@@ -46,6 +46,7 @@
 </template>
 <script lang="ts">
 import { NSplit, NTabs, NTabPane } from "naive-ui";
+import Readme from "./Readme.vue";
 export default {
   components: {
     NSplit,
@@ -55,7 +56,25 @@ export default {
   data() {
     return {
       aboutName: "READ.me",
-      aboutPanels: ["READ.me", "Experience.vue", "Skills.tsx", "Contact.html"],
+      aboutPanels: [
+        {
+          name: "READ.me",
+          component: Readme,
+        },
+
+        {
+          name: "Experience.vue",
+          component: Readme,
+        },
+        {
+          name: "Skills.tsx",
+          component: Readme,
+        },
+        {
+          name: "Contact.html",
+          component: Readme,
+        },
+      ],
       projectsName: "Project #1.vue",
       projectPanels: [
         "Project #1.vue",
