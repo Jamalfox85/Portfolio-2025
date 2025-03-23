@@ -163,7 +163,6 @@ export default {
 .experience_wrapper {
   padding: 20px;
   color: var(--theme-text);
-  max-width: 700px;
   line-height: 1.6;
 
   .main-header {

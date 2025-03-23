@@ -48,6 +48,7 @@
 import { NSplit, NTabs, NTabPane } from "naive-ui";
 import Readme from "./Readme.vue";
 import Experience from "./Experience.vue";
+import Skills from "./Skills.vue";
 export default {
   components: {
     NSplit,
@@ -69,7 +70,7 @@ export default {
         },
         {
           name: "Skills.tsx",
-          component: Experience,
+          component: Skills,
         },
       ],
       projectsName: "Project #1.vue",
